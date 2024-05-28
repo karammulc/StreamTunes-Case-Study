@@ -31,11 +31,41 @@
 | valence         | valence_%           |
 | energy          | energy_%            |
 
-## Uploading Data to BigQuery
+# Google Sheets Cleaning and Manipulation  
 
-The dataset was uploaded to Google BigQuery for cleaning and manipulation.
+### Data Cleaning and Preparation
+1. Column Data Type Conversion:
 
+- Converted the columns streams, indeezerplaylists, and inshazamcharts to numeric data types in Google Sheets.
 
+2. Handling Corrupted Characters:
+
+- Discovered corrupted characters (�) in many songtitles and artistname fields.
+- Used the SUBSTITUTE function to replace corrupted characters:
+
+=SUBSTITUTE(A2, "�", "")
+
+- Created new columns and pasted the cleaned values from the function results.
+- Deleted unnecessary columns that contained corrupted characters or functions.
+
+3. Addressing Null Values:
+- Used filters to identify null values in trackname and artistname columns.
+- For two records with null trackname, replaced the values with "unknown":
+(artistname = YOASOBI
+artistname = FUJII KAZE)
+
+#### Other null values will be addressed through SQL cleaning.
+
+4. Numerical/Date Formatting:
+
+- Applied numerical and date formatting to the releasedyear column.
+
+#### Community Contribution 
+During the review of the dataset discussion, user paulabsmanner identified a corrupted streams value for the song "Love Grows (Where My Rosemary Goes)".
+Located and removed this corrupted record.
+Acknowledgment and thanks to the Kaggle community for their contributions!
+
+#SQL Cleaning and Manipulation
 ## Filling Missing Values
 ```sql
 UPDATE music.musicdata
@@ -43,7 +73,7 @@ SET inshazamcharts = COALESCE(inshazamcharts, 0),
     key = COALESCE(key, 'Unknown')
 WHERE TRUE;
 ```
-#### *Result: 33 distinct IDs in the dailyactivity table.*
+
 
 
 #### Checking the consistency of distinct user IDs across all tables:
