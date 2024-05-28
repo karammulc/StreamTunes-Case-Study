@@ -1,4 +1,4 @@
-# StreamTunes SQL Clean and manipulation
+# StreamTunes Clean and manipulation
 
 - The Google Sheet process and SQL queries outlined below demonstrate the process of cleaning, manipulating, and preparing the Spotify Dataset for further analysis in R. The dataset was thoroughly checked for data quality issues, duplicates, and null values.
 
