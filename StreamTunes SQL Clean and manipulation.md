@@ -1,3 +1,14 @@
+Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data-driven insights. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify,
+including track attributes, popularity, and presence on various music platforms.
+Objectives:
+Identify key factors that contribute to a song's popularity and success across different music platforms.
+Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
+Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
+
+
+
+
+
 # StreamTunes Clean and manipulation
 
 - The Google Sheet process and SQL queries outlined below demonstrate the process of cleaning, manipulating, and preparing the Spotify Dataset for further analysis in R. The dataset was thoroughly checked for data quality issues, duplicates, and null values.
@@ -5,8 +16,9 @@
 - The dataset is sourced from Kaggle and has a comprehensive list of the most famous songs of 2023 as listed on Spotify.
 - The data includes The table `spotifydata` in the `music` dataset contains detailed measurements including track name, artist name, number of contributing artists, release date, presence in and rank on Spotify, Apple Music, Deezer, and Shazam 
   playlists and charts, total streams on Spotify, beats per minute (bpm), song key and mode, and various audio features such as danceability, valence, energy, acousticness, instrumentalness, liveness, and speechiness percentages.
+- There are 952 total songs within the table.
 
-- The dataset spans from April 12, 2016, to May 12, 2016, providing a single month of data.
+
 
 | New Column  | Original Column         |
 |-----------------|---------------------|
@@ -66,6 +78,11 @@ Located and removed this corrupted record.
 Acknowledgment and thanks to the Kaggle community for their contributions!
 
 #SQL Cleaning and Manipulation
+## Removing "Love Grows (Where My Rosemary Goes)" record
+```sql
+DELETE FROM music.spotifydata
+WHERE streams = 'BPM110KeyAModeMajorDanceability53Valence75Energy69Acousticness7Instrumentalness0Liveness17Speechiness3';
+```
 ## Filling Missing Values
 ```sql
 UPDATE music.musicdata
@@ -73,248 +90,57 @@ SET inshazamcharts = COALESCE(inshazamcharts, 0),
     key = COALESCE(key, 'Unknown')
 WHERE TRUE;
 ```
+# SQL Analysis
 
-
-
-#### Checking the consistency of distinct user IDs across all tables:
- ```sql
-
-``` 
-### Result: Counts differed across some tables.
-
-| Dataset           | Distinct IDs |
-|-------------------|--------------|
-| dailyactivity     | 33           |
-| dailycalories     | 33           |
-| dailyintensities  | 33           |
-| dailysteps        | 33           |
-| hourlyintensities | 33           |
-| hourlysteps       | 33           |
-| sleepday          | 24           |
-| weightlog         | 8            |
-
-
-
-## Checking for Duplicates
-
-Duplicate check - dailycalories
+Average Dancability by song
 ```sql
-SELECT Id, ActivityDay, Calories, Count(*)
-FROM bellabeat.dailycalories
-GROUP BY Id, ActivityDay, Calories
-HAVING Count(*) > 1;
+
+SELECT key, AVG(danceability) AS avg_danceability, AVG(energy) AS avg_energy
+FROM music.spotifydata
+GROUP BY key;
 ```
 
-Duplicate check - dailyactivity   
-```sql SELECT Id, ActivityDate, TotalSteps, Count(*)
-FROM bellabeat.dailyactivity
-GROUP BY Id, ActivityDate, TotalSteps
-HAVING Count(*) > 1;
-```
-
-Duplicate check - dailyintensities
-```sql
-SELECT Id,
-      ActivityDay,
-      SedentaryMinutes,
-      LightlyActiveMinutes,
-      FairlyActiveMinutes,
-      VeryActiveMinutes,
-      SedentaryActiveDistance,
-      LightActiveDistance,
-      ModeratelyActiveDistance,
-      VeryActiveDistance,
-      COUNT(*)
-FROM `bellabeat.dailyintensities`
-GROUP BY Id,
-        ActivityDay,
-        SedentaryMinutes,
-        LightlyActiveMinutes,
-        FairlyActiveMinutes,
-        VeryActiveMinutes,
-        SedentaryActiveDistance,
-        LightActiveDistance,
-        ModeratelyActiveDistance,
-        VeryActiveDistance
-HAVING COUNT(*) > 1;
-```
-
-Duplicate check - hourlysteps
-```sql
-SELECT Id, ActivityHour, StepTotal, Count(*)
-FROM `bellabeat.hourlysteps`
-GROUP BY Id, ActivityHour, StepTotal
-HAVING Count(*) > 1;
-```
-Duplicate check - sleepday
-```sql
-SELECT Id, 
-       SleepDay,
-       TotalSleepRecords,
-       TotalMinutesAsleep,
-       TotalTimeInBed, 
-       Count(*)
-FROM `bellabeat.sleepday`
-GROUP BY Id, 
-         SleepDay,
-         TotalSleepRecords,
-         TotalMinutesAsleep,
-         TotalTimeInBed
-HAVING Count(*) > 1;
-```
-*Result: Duplicates were found only in sleepday table.*
-
-| Id         | SleepDay                    | TotalSleepRecords | TotalMinutesAsleep | TotalMinutesInBed | Count of Duplicates |
-|------------|-----------------------------|-------------------|--------------------|-------------------|---------------------|
-| 4388161847 | 2016-05-05 00:00:00.000000 UTC | 1                 | 471                | 495               | 2                   |
-| 4702921684 | 2016-05-07 00:00:00.000000 UTC | 1                 | 520                | 543               | 2                   |
-| 8378563200 | 2016-04-25 00:00:00.000000 UTC | 1                 | 388                | 402               | 2                   |
-
-
-Verifying the duplicates in the sleepday table
+| key     | avg_danceability     | avg_energy           |
+|---------|----------------------|----------------------|
+| D       | 67.80246913580244    | 63.530864197530867   |
+| Unknown | 64.378947368421066   | 63.684210526315752   |
+| B       | 69.49382716049378    | 68.0                 |
+| A#      | 68.7894736842105     | 62.78947368421052    |
+| A       | 64.108108108108127   | 60.094594594594582   |
+| F#      | 68.232876712328775   | 66.726027397260253   |
+| F       | 67.101123595505584   | 64.382022471910062   |
+| G       | 67.447916666666657   | 63.71875000000005    |
+| G#      | 66.373626373626351   | 64.0659340659341     |
+| C#      | 68.6416666666667     | 66.550000000000026   |
+| E       | 65.032258064516114   | 62.11290322580647    |
+| D#      | 64.545454545454561   | 62.8484848484848     |
 
 ```sql
-SELECT *
-FROM `bellabeat.sleepday`
-WHERE (Id = 4388161847 AND SleepDay = "2016-05-05 00:00:00.000000 UTC")
-  OR (Id = 4702921684 AND SleepDay = "2016-05-07 00:00:00.000000 UTC")
-  OR (Id = 8378563200 AND SleepDay = "2016-04-25 00:00:00.000000 UTC");
-
-```
-| Id         | SleepDay                  | TotalSleepRecords | TotalMinutesAsleep | TotalTimeInBed |
-|------------|---------------------------|-------------------|--------------------|----------------|
-| 4388161847 | 2016-05-05 00:00:00 UTC   | 1                 | 471                | 495            |
-| 4388161847 | 2016-05-05 00:00:00 UTC   | 1                 | 471                | 495            |
-| 4702921684 | 2016-05-07 00:00:00 UTC   | 1                 | 520                | 543            |
-| 4702921684 | 2016-05-07 00:00:00 UTC   | 1                 | 520                | 543            |
-| 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
-| 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
-
-## Removing duplicates from the sleepday table // creating a new clean_sleepday table
-
-```sql
-CREATE OR REPLACE TABLE `bellabeat.clean_sleepday` AS
-SELECT *
-FROM (
-  SELECT
-    *,
-    ROW_NUMBER() OVER (PARTITION BY Id, SleepDay ORDER BY Id) as row_num
-  FROM `bellabeat.sleepday`
-)
-WHERE row_num = 1;
+SELECT artistname, trackname, streams
+FROM music.spotifydata
+ORDER BY streams DESC
+LIMIT 10;
 ```
 
-## Checking for Null Values
 
-Null value check - weightlog
-```sql
-SELECT
-  COUNT(*) AS total_rows,
-  COUNTIF(WeightKg IS NULL) AS null_WeightKg,
-  COUNTIF(WeightPounds IS NULL) AS null_WeightPounds,
-  COUNTIF(Fat IS NULL) AS null_Fat,
-  COUNTIF(BMI IS NULL) AS null_BMI,
-  COUNTIF(IsManualReport IS NULL) AS null_report,
-  COUNTIF(LogId IS NULL) AS null_logId,
-FROM `bamboo-life-418613.bellabeat.weightlog`;
-```
-
-Results: Null values were found in the Fat column of the weightlog table.
-
-...
-Checked for null values in remaining tables:
-dailyactivity, clean_sleepday, dailycalories, dailyintensities, dailysteps, hourlyintensities, hourlysteps
-
-No null values were found in these tables.
+| artistname                      | trackname                                 | streams    |
+|---------------------------------|-------------------------------------------|------------|
+| Taylor Swift                    | Anti-Hero                                 | 999748277  |
+| Duncan Laurence                 | Arcade                                    | 991336132  |
+| Joji                            | Glimpse of Us                             | 988515741  |
+| Lana Del Rey                    | Summertime Sadness                        | 983637508  |
+| SZA                             | Seek & Destroy                            | 98709329   |
+| Lost Frequencies, Calum Scott   | Where Are You Now                         | 972509632  |
+| The Walters                     | I Love You So                             | 972164968  |
+| Sofia Carson                    | Come Back Home - From "Purple Hearts"     | 97610446   |
+| (G)I-DLE                        | Queencard                                 | 96273746   |
+| The Weeknd, Future              | Double Fantasy (with Future)              | 96180277   |
 
 
 
-# Dropping the weightlog Table
-
-The weightlog table was dropped from the analysis due to the following reasons:
-
-1. Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
-2. Missing values: High number of null values in the Fat column, suggesting unreliable data capture or reporting.
-3. Relevance: Weight data was not considered a major variable for the analysis.
 
 
-## New Columns
 
-Adding Time of Day Column:  I added a DayPeriod column to the hourlyintensities and hourlysteps tables to categorize data into "Morning" (6 AM to 11:59 AM), "Afternoon" (12 PM to 3:59 PM), and "Night" (4 PM to 5:59 AM):
 
-```sql
-SELECT *, 
-   CASE 
-      WHEN EXTRACT(HOUR FROM ActivityHour) BETWEEN 6 AND 11 THEN 'Morning'
-      WHEN EXTRACT(HOUR FROM ActivityHour) BETWEEN 12 AND 15 THEN 'Afternoon'
-      ELSE 'Night'
-   END AS DayPeriod
-FROM bellabeats.hourlyintensities;
-```
 
-```sql
-SELECT *, 
-   CASE 
-      WHEN EXTRACT(HOUR FROM ActivityHour) BETWEEN 6 AND 11 THEN 'Morning'
-      WHEN EXTRACT(HOUR FROM ActivityHour) BETWEEN 12 AND 15 THEN 'Afternoon'
-      ELSE 'Night'
-   END AS DayPeriod
-FROM bellabeats.hourlysteps;
-```
-The resulting tables were saved as:
-| hourlystepstod | hourlyintensitiestod |
-|-------------------|--------------|
 
-### Adding Day of Week Column
-
-Added a DayOfWeek column to the dailysteps, dailyintensities, dailycalories, dailyactivity, and clean_sleepday tables using the FORMAT_DATE() function:
-```sql
-SELECT *, 
-    FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
-FROM bellabeat.dailysteps;
-sqlCopy codeSELECT 
-    *, 
-    FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
-FROM bellabeat.dailyintensities;
-sqlCopy codeSELECT 
-    *, 
-    FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
-FROM bellabeat.dailycalories;
-sqlCopy codeSELECT
-   *,
-   FORMAT_DATE('%A', ActivityDate) AS DayOfWeek
-FROM `bellabeat.dailyactivity`;
-sqlCopy codeSELECT 
-    *, 
-    FORMAT_DATE('%A', SleepDay) AS DayOfWeek
-FROM bellabeat.clean_sleepday;
-```
-
-The resulting tables were saved as:
-| dailystepsdow| dailyintensititesdow | dailycaloriesdow | TotalMinutesAsleep |
-|------------|---------------------------|-------------------|--------------------|
-
-### Renaming Columns for Consistency
-
-Renamed the ActivityDate column to ActivityDay in the dailyactivitydow table:
-```sql
-ALTER TABLE bellabeat.dailyactivitydow
-RENAME COLUMN ActivityDate TO ActivityDay;
-```
-Renaming the SleepDay column to ActivityDay in the clean_sleepdaydow table:
-```sql
-ALTER TABLE bellabeat.clean_sleepdaydow
-RENAME COLUMN SleepDay TO ActivityDay;
-```
-
-# Data Export
-
-| Original Dataset         | Renamed Dataset           |
-|--------------------------|---------------------------|
-| clean_sleepdaydow        | sleepdayclean             |
-| dailyactivitydow         | dailyactivityclean        |
-| dailycaloriesdow         | dailycaloriesclean        |
-| dailyintensitiesdow      | dailyintensitiesclean     |
-| dailystepsdow            | dailystepsclean           |
-| hourlyintensitiestod     | hourlyintensitiesclean    |
-| hourlystepstod           | hourlystepsclean          |
