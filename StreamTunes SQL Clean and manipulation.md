@@ -91,8 +91,22 @@ SET inshazamcharts = COALESCE(inshazamcharts, 0),
 WHERE TRUE;
 ```
 # SQL Analysis
+## Finding Top 5 Artists With Highest Average Total Streams 
+```SQL
+SELECT s.artistname, AVG(t.total_streams) AS avg_total_streams
+FROM music.spotifydata s
+JOIN (
+  SELECT artistname, SUM(streams) AS total_streams
+  FROM music.spotifydata
+  GROUP BY artistname
+) t ON s.artistname = t.artistname
+GROUP BY s.artistname
+ORDER BY avg_total_streams DESC
+LIMIT 5;`
+```
 
-Average Dancability by song
+
+## Average Danceability by song
 ```sql
 
 SELECT key, AVG(danceability) AS avg_danceability, AVG(energy) AS avg_energy
@@ -123,7 +137,7 @@ LIMIT 10;
 ```
 
 
-| artistname                      | trackname                                 | streams    |
+| Artist Name                      | Track Name                                 | Streams    |
 |---------------------------------|-------------------------------------------|------------|
 | Taylor Swift                    | Anti-Hero                                 | 999748277  |
 | Duncan Laurence                 | Arcade                                    | 991336132  |
@@ -136,11 +150,26 @@ LIMIT 10;
 | (G)I-DLE                        | Queencard                                 | 96273746   |
 | The Weeknd, Future              | Double Fantasy (with Future)              | 96180277   |
 
+## What is the most common key in the top ranking 100 songs?
+
+#### 1. Select the top 100 songs based on a certain criteria (e.g., streams, popularity).
+#### 2.Group the top 100 songs by their key.
+#### 3.Count the occurrence of each key.
+#### 4.Order the results by the count in descending order.
+#### 5.Limit the output to the top result.
 
 
-
-
-
-
+| Key                                 | Key Count                             | 
+|---------------------------------|-------------------------------------------|
+| C#                              | 19                                        | 
+| A                               | 11                                        | 
+| F#                              | 11                                        | 
+| E                               | 9                                         | 
+| G                               | 8                                         | 
+| F                               | 7                                         |
+| G#                              | 7                                         | 
+| B                               | 5                                         |
+| A                               | 5                                         | 
+| Unknown                         | 5                                         | 
 
 
