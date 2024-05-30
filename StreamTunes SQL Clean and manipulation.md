@@ -158,6 +158,18 @@ LIMIT 10;
 #### 4.Order the results by the count in descending order.
 #### 5.Limit the output to the top result.
 
+```SQL
+SELECT key, COUNT(*) AS key_count
+FROM (
+  SELECT key
+FROM music.spotifydata
+ORDER BY streams DESC
+LIMIT 100
+)
+GROUP BY key_count
+ORDER BY key_count DESC
+LIMIT 10;
+```
 
 | Key                                 | Key Count                             | 
 |---------------------------------|-------------------------------------------|
