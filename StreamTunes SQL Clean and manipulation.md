@@ -1,9 +1,11 @@
 Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data-driven insights. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify,
 including track attributes, popularity, and presence on various music platforms.
+
+
 Objectives:
-Identify key factors that contribute to a song's popularity and success across different music platforms.
-Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
-Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
+- Identify key factors that contribute to a song's popularity and success across different music platforms.
+- Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
+- Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
 
 
 
@@ -153,10 +155,10 @@ LIMIT 10;
 ## What is the most common key in the top ranking 100 songs?
 
 #### 1. Select the top 100 songs based on a certain criteria (e.g., streams, popularity).
-#### 2.Group the top 100 songs by their key.
-#### 3.Count the occurrence of each key.
-#### 4.Order the results by the count in descending order.
-#### 5.Limit the output to the top result.
+#### 2. Group the top 100 songs by their key.
+#### 3. Count the occurrence of each key.
+#### 4. Order the results by the count in descending order.
+#### 5. Limit the output to the top result.
 
 ```SQL
 SELECT key, COUNT(*) AS key_count
@@ -184,4 +186,45 @@ LIMIT 10;
 | A                               | 5                                         | 
 | Unknown                         | 5                                         | 
 
+
+```{r}
+str(spotifydata)
+summary(spotifydata)
+```
+
+```{r}
+str(spotifydata)
+```
+
+#### Distribution of bpm
+```{r}
+hist(spotifydata$bpm, main = "Distribution of bpm", xlab = "bpm")
+```
+
+#### Distribution of Key
+```{r}
+hist(spotifydata$bpm, main = "Distribution of key", xlab = "key")
+```
+
+#### Distribution of Streams by Mode
+```{r}
+library(ggplot2)
+
+# Create a histogram with layered densities for different 'mode' categories
+ggplot(spotifydata, aes(x = streams, fill = mode)) +
+  geom_histogram(alpha = 0.5, position = "identity", bins = 30) +
+  scale_fill_manual(values = c("blue", "red")) +
+  labs(title = "Distribution of Streams by Mode",
+       x = "Streams",
+       y = "Frequency",
+       fill = "Mode") +
+  theme_minimal()
+```
+
+
+#Correlation Matrix
+```{r}
+correlation_matrix <- cor(spotifydata_cleaned_complete)
+print(correlation_matrix)
+```
 
