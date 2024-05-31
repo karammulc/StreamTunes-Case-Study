@@ -8,9 +8,6 @@ Objectives:
 - Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
 
 
-
-
-
 # StreamTunes Clean and manipulation
 
 - The Google Sheet process and SQL queries outlined below demonstrate the process of cleaning, manipulating, and preparing the Spotify Dataset for further analysis in R. The dataset was thoroughly checked for data quality issues, duplicates, and null values.
@@ -93,6 +90,7 @@ SET inshazamcharts = COALESCE(inshazamcharts, 0),
 WHERE TRUE;
 ```
 # SQL Analysis
+
 ## Finding Top 5 Artists With Highest Average Total Streams 
 ```SQL
 SELECT s.artistname, AVG(t.total_streams) AS avg_total_streams
@@ -108,7 +106,7 @@ LIMIT 5;`
 ```
 
 
-## Average Danceability by song
+## Average Danceability and Energy by Key
 ```sql
 
 SELECT key, AVG(danceability) AS avg_danceability, AVG(energy) AS avg_energy
@@ -116,7 +114,7 @@ FROM music.spotifydata
 GROUP BY key;
 ```
 
-| key     | avg_danceability     | avg_energy           |
+| Key     | Avgerage Danceability | Average Energy           |
 |---------|----------------------|----------------------|
 | D       | 67.80246913580244    | 63.530864197530867   |
 | Unknown | 64.378947368421066   | 63.684210526315752   |
@@ -186,6 +184,18 @@ LIMIT 10;
 | A                               | 5                                         | 
 | Unknown                         | 5                                         | 
 
+#### R Vizualizations
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+```
+
+#### Loading data set
+```{r}
+spotifydata <- read.csv("spotify.csv")
+```
 
 ```{r}
 str(spotifydata)
