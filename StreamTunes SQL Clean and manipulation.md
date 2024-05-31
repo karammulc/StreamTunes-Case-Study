@@ -91,19 +91,24 @@ WHERE TRUE;
 ```
 # SQL Analysis
 
-## Finding Top 5 Artists With Highest Average Total Streams 
+####  Top 5 Artists with most streams
 ```SQL
-SELECT s.artistname, AVG(t.total_streams) AS avg_total_streams
-FROM music.spotifydata s
-JOIN (
-  SELECT artistname, SUM(streams) AS total_streams
-  FROM music.spotifydata
-  GROUP BY artistname
-) t ON s.artistname = t.artistname
-GROUP BY s.artistname
-ORDER BY avg_total_streams DESC
-LIMIT 5;`
+SELECT artistname,sum(streams) AS total_streams
+FROM music.spotifydata
+GROUP BY artistname
+ORDER BY total_streams DESC
+LIMIT 5;
 ```
+
+| Artist Name | Stream Count | 
+|---------|----------------------|
+| The Weeknd   | 14185552870      | 
+| Taylor Swift | 14053658300      |
+| Ed Sheeran   | 13908947204  | 
+| Harry Styles | 11608645649     | 
+| Bad Bunny    | 9997799607   | 
+
+
 
 
 ## Average Danceability and Energy by Key
@@ -114,7 +119,7 @@ FROM music.spotifydata
 GROUP BY key;
 ```
 
-| Key     | Avgerage Danceability | Average Energy           |
+| Key     | Average Danceability | Average Energy           |
 |---------|----------------------|----------------------|
 | D       | 67.80246913580244    | 63.530864197530867   |
 | Unknown | 64.378947368421066   | 63.684210526315752   |
@@ -150,14 +155,11 @@ LIMIT 10;
 | (G)I-DLE                        | Queencard                                 | 96273746   |
 | The Weeknd, Future              | Double Fantasy (with Future)              | 96180277   |
 
-## What is the most common key in the top ranking 100 songs?
 
-#### 1. Select the top 100 songs based on a certain criteria (e.g., streams, popularity).
-#### 2. Group the top 100 songs by their key.
-#### 3. Count the occurrence of each key.
-#### 4. Order the results by the count in descending order.
-#### 5. Limit the output to the top result.
 
+#### Finding most common Keys in top 100 songs
+
+-  To achieve this, I selected the top 100 songs ordered by streams, grouped by key, and counted the occurrence of each key. Lastly, I ordered the count in descending order.
 ```SQL
 SELECT key, COUNT(*) AS key_count
 FROM (
@@ -184,7 +186,7 @@ LIMIT 10;
 | A                               | 5                                         | 
 | Unknown                         | 5                                         | 
 
-#### R Vizualizations
+# R Vizualizations
 
 ```{r}
 library(tidyverse)
@@ -213,7 +215,7 @@ hist(spotifydata$bpm, main = "Distribution of bpm", xlab = "bpm")
 
 #### Distribution of Key
 ```{r}
-hist(spotifydata$bpm, main = "Distribution of key", xlab = "key")
+hist(spotifydata$key, main = "Distribution of key", xlab = "key")
 ```
 
 #### Distribution of Streams by Mode
@@ -232,9 +234,9 @@ ggplot(spotifydata, aes(x = streams, fill = mode)) +
 ```
 
 
-#Correlation Matrix
+#### Correlation Matrix
 ```{r}
-correlation_matrix <- cor(spotifydata_cleaned_complete)
+correlation_matrix <- cor(spotifydata)
 print(correlation_matrix)
 ```
 
