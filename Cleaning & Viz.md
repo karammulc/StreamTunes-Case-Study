@@ -9,6 +9,33 @@
 
 # Google Sheets Cleaning and Manipulation  
 
+## Table Variables
+
+| New Column  | Original Column         |
+|-----------------|---------------------|
+| trackname       | track_name          |
+| artistname      | artist_name         |
+| artistcount     | artist_count        |
+| releasedyear    | released_year       |
+| releasedmonth   | released_month      |
+| releasedday     | Released_day        |
+| inspotifyplaylists | in_spotify_playlists |
+| inspotifycharts | in_spotify_charts   |
+| streams         | streams             |
+| inappleplaylists | in_apple_playlists  |
+| inapplecharts   | in_apple_charts     |
+| indeezerplaylists | in_deezer_playlists |
+| indeezercharts  | in_deezer_charts    |
+| inshazamcharts  | in_shazam_charts    |
+| bpm             | bpm                 |
+| key             | key                 |
+| mode            | mode                |
+| danceability    | danceability_%      |
+| valence         | valence_%           |
+| energy          | energy_%            |
+
+
+
 ### Data Cleaning and Preparation
 1. Column Data Type Conversion:
 
