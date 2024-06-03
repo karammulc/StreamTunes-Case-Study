@@ -23,7 +23,7 @@ Objectives:
 
 ## Key Findings
 
-##Recomendations
+## Recomendations
 
 ## Tables
 
