@@ -9,7 +9,7 @@ Objectives:
 - Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
 
 
-![Distribution of Streams by Mode]([https://github.com/karammulc/StreamTunes-Case-Study](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Mode.png))
+![Distribution of Streams by Mode](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Mode.png)
 
 ![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
 
