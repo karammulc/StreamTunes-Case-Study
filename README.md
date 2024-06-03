@@ -36,25 +36,6 @@ Objectives:
 ## Recommendations
 
 
-
-## Visualizations
-
-## Distribution of Streams by Mode
-![Distribution of Streams by Mode](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Mode.png)
-
-## BPM Distribution
-![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
-
-## Distribution of Songs by Key
-![Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Key.png)
-
-## Distribution of Songs by Release Year
-![Distribution of Songs by Release Year](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Release%20Year.png))
-
-## Top Artists by Number of Songs
-![Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png)
-
-
 ## Tables
 
 #### Top 5 Artists with Highest Stream Count
@@ -112,3 +93,22 @@ Objectives:
 | B                               | 5                                         |
 | A                               | 5                                         | 
 | Unknown                         | 5                                         | 
+
+
+## Visualizations
+
+## Distribution of Streams by Mode
+![Distribution of Streams by Mode](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Mode.png)
+
+## BPM Distribution
+![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
+
+## Distribution of Songs by Key
+![Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Key.png)
+
+## Distribution of Songs by Release Year
+![Distribution of Songs by Release Year](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Release%20Year.png))
+
+## Top Artists by Number of Songs
+![Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png)
+
