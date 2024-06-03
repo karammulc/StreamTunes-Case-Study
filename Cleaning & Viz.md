@@ -37,8 +37,8 @@ artistname = FUJII KAZE)
 - Applied numerical and date formatting to the releasedyear column.
 
 #### Community Contribution 
-During the review of the dataset discussion, user paulabsmanner identified a corrupted streams value for the song "Love Grows (Where My Rosemary Goes)".
-Located and removed this corrupted record.
+During the review of the dataset discussion, I found that user paulabsmanner identified a corrupted streams value for the song "Love Grows (Where My Rosemary Goes)".
+I located and removed this corrupted record.
 Acknowledgment and thanks to the Kaggle community for their contributions!
 
 ## SQL Cleaning and Manipulation
