@@ -81,7 +81,7 @@ SET inshazamcharts = COALESCE(inshazamcharts, 0),
     key = COALESCE(key, 'Unknown')
 WHERE TRUE;
 ```
-# SQL Analysis
+##  SQL Analysis
 
 ####  Top 5 Artists with most streams
 ```SQL
