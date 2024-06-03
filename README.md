@@ -58,28 +58,7 @@ Objectives:
 
 ## Tables
 
-| New Column  | Original Column         |
-|-----------------|---------------------|
-| trackname       | track_name          |
-| artistname      | artist_name         |
-| artistcount     | artist_count        |
-| releasedyear    | released_year       |
-| releasedmonth   | released_month      |
-| releasedday     | Released_day        |
-| inspotifyplaylists | in_spotify_playlists |
-| inspotifycharts | in_spotify_charts   |
-| streams         | streams             |
-| inappleplaylists | in_apple_playlists  |
-| inapplecharts   | in_apple_charts     |
-| indeezerplaylists | in_deezer_playlists |
-| indeezercharts  | in_deezer_charts    |
-| inshazamcharts  | in_shazam_charts    |
-| bpm             | bpm                 |
-| key             | key                 |
-| mode            | mode                |
-| danceability    | danceability_%      |
-| valence         | valence_%           |
-| energy          | energy_%            |
+#### Top 5 Artists with Highest Stream Count
 
 | Artist Name | Stream Count | 
 |---------|----------------------|
@@ -89,6 +68,7 @@ Objectives:
 | Harry Styles | 11608645649     | 
 | Bad Bunny    | 9997799607   | 
 
+#### Average Danceability and Energy by Key
 
 | Key     | Average Danceability | Average Energy           |
 |---------|----------------------|----------------------|
@@ -105,6 +85,7 @@ Objectives:
 | E       | 65.032258064516114   | 62.11290322580647    |
 | D#      | 64.545454545454561   | 62.8484848484848     |
 
+####  Songs With Highest Stream Count
 
 | Artist Name                      | Track Name                                 | Streams    |
 |---------------------------------|-------------------------------------------|------------|
@@ -119,6 +100,7 @@ Objectives:
 | (G)I-DLE                        | Queencard                                 | 96273746   |
 | The Weeknd, Future              | Double Fantasy (with Future)              | 96180277   |
 
+#### Most Common Key in Top 100 songs
 | Key                                 | Key Count                             | 
 |---------------------------------|-------------------------------------------|
 | C#                              | 19                                        | 
