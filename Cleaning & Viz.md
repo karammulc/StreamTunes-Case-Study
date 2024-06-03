@@ -41,13 +41,13 @@ During the review of the dataset discussion, user paulabsmanner identified a cor
 Located and removed this corrupted record.
 Acknowledgment and thanks to the Kaggle community for their contributions!
 
-#SQL Cleaning and Manipulation
-## Removing "Love Grows (Where My Rosemary Goes)" record
+## SQL Cleaning and Manipulation
+#### Removing "Love Grows (Where My Rosemary Goes)" record
 ```sql
 DELETE FROM music.spotifydata
 WHERE streams = 'BPM110KeyAModeMajorDanceability53Valence75Energy69Acousticness7Instrumentalness0Liveness17Speechiness3';
 ```
-## Filling Missing Values
+#### Filling Missing Values
 ```sql
 UPDATE music.musicdata
 SET inshazamcharts = COALESCE(inshazamcharts, 0),
@@ -65,7 +65,7 @@ ORDER BY total_streams DESC
 LIMIT 5;
 ```
 
-## Average Danceability and Energy by Key
+#### Average Danceability and Energy by Key
 ```sql
 
 SELECT key, AVG(danceability) AS avg_danceability, AVG(energy) AS avg_energy
@@ -73,7 +73,7 @@ FROM music.spotifydata
 GROUP BY key;
 ```
 
-## Most Listened to Songs 
+#### Most Listened to Songs 
 ```sql
 SELECT artistname, trackname, streams
 FROM music.spotifydata
@@ -98,15 +98,16 @@ ORDER BY key_count DESC
 LIMIT 10;
 ```
 
-# R Vizualizations
+## R Vizualizations
 
+#### Loading Libraries
 ```{r}
 library(tidyverse)
 library(lubridate)
 library(ggplot2)
 ```
 
-#### Loading data set
+#### Loading Data Set
 ```{r}
 spotifydata <- read.csv("spotify.csv")
 ```
@@ -120,21 +121,24 @@ summary(spotifydata)
 str(spotifydata)
 ```
 
-#### Distribution of bpm
+#### Distribution of BPM
 ```{r}
 hist(spotifydata$bpm, main = "Distribution of bpm", xlab = "bpm")
 ```
 
 #### Distribution of Key
 ```{r}
-hist(spotifydata$key, main = "Distribution of key", xlab = "key")
+ggplot(spotifydata, aes(x = key)) +
+  geom_bar(fill = "steelblue") +
+  labs(title = "Distribution of Songs by Key",
+       x = "Key",
+       y = "Count") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 #### Distribution of Streams by Mode
 ```{r}
-library(ggplot2)
-
-# Create a histogram with layered densities for different 'mode' categories
 ggplot(spotifydata, aes(x = streams, fill = mode)) +
   geom_histogram(alpha = 0.5, position = "identity", bins = 30) +
   scale_fill_manual(values = c("blue", "red")) +
@@ -145,6 +149,32 @@ ggplot(spotifydata, aes(x = streams, fill = mode)) +
   theme_minimal()
 ```
 
+#### Distribution of Songs by Release Year
+```{r}
+ggplot(spotifydata, aes(x = releasedyear)) +
+  geom_histogram(binwidth = 10, fill = "steelblue", color = "white") +
+  labs(title = "Distribution of Songs by Release Year",
+       x = "Release Year",
+       y = "Count") +
+  theme_minimal()
+```
+#### Top Ten Artists Variable Assignment
+```{r}
+top_artists <- spotifydata %>% 
+  count(artistname, sort = TRUE ) %>% 
+  head(10)
+```
+
+#### Top Artists by Number of Songs
+```{r}
+ggplot(top_artists, aes(x = reorder(artistname, n), y = n)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(title = "Top Artists by Number of Songs",
+       x = "Artist",
+       y = "Number of Songs") +
+  theme_minimal()
+```
 
 #### Correlation Matrix
 ```{r}
