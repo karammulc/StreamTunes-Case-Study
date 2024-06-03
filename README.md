@@ -8,12 +8,12 @@ Objectives:
 - Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
 - Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
 
-[BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
+![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
 
-[Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Key.png)
+![Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Key.png)
 
-[Distribution of Songs by Release Year]([Images/Distribution of Songs by Release Year.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Release%20Year.png))
+![Distribution of Songs by Release Year]([Images/Distribution of Songs by Release Year.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Release%20Year.png))
 
-[Distribution of Streams by Key.png]([https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Key.png))
+![Distribution of Streams by Key.png]([https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Key.png))
 
-[Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png)
+![Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png)
