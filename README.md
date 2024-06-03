@@ -24,6 +24,11 @@ Objectives:
 [Cleaning, Manipulation & Visualization Markdown](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Cleaning%20%26%20Viz.md)
 
 ## Challenges
+#### Challenges for this project were relatively limited. 
+- Some characters within the dataset were corrupted (� instead of letters); this was resolved with the SUBSTITUTE function within sheets.
+- I had some slight trouble with keeping the streams variable as INT instead of CHR upon upload to posit cloud; but this was fixed to a num conversion within sheets.
+- During the review of the dataset discussion, I found that user paulabsmanner identified a corrupted streams value for the song "Love Grows (Where My Rosemary Goes)".
+  I located and removed this corrupted record using SQL. Acknowledgment and thanks to the Kaggle community for their contributions!
 
 ## Key Findings
 
