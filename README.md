@@ -29,7 +29,7 @@ Objectives:
 - There was slight trouble with keeping the streams variable as INT instead of CHR upon upload to posit cloud; but this was fixed to a num conversion within sheets.
 - During a review of the dataset discussion, I found that user [paulabsmanner](https://www.kaggle.com/paulabsmanner) identified a corrupted streams value for the song "Love Grows (Where My Rosemary Goes)".
   I located and removed this corrupted record using SQL.
-- ###### Acknowledgment and thanks to the Kaggle community for their contributions!
+###### Acknowledgment and thanks to the Kaggle community for their contributions!
   
 
 ## Key Findings
