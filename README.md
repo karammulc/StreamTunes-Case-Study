@@ -104,11 +104,11 @@ Objectives:
 ![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
 
 ## Distribution of Songs by Key
-![Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Key.png)
+![Distribution of Songs by Key](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribtion%20of%20Songs%20by%20Key.png))
 
 ## Distribution of Songs by Release Year
-![Distribution of Songs by Release Year](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Songs%20by%20Release%20Year.png))
+![Distribution of Songs by Release Year](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/DistributionofSongs%20byReleaseYear.png)
 
 ## Top Artists by Number of Songs
-![Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png)
+![Top Artists by Number of Songs](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Top%20Artists%20by%20Number%20of%20Songs.png))
 
