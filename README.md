@@ -94,6 +94,28 @@ Objectives:
 | A                               | 5                                         | 
 | Unknown                         | 5                                         | 
 
+#### Overall Key Count
+
+| Row | key | key_count |
+|-----|-----|-----------|
+| 1   | C#  | 120       |
+| 2   | G   | 96        |
+| 3   | G#  | 91        |
+| 4   | F   | 89        |
+| 5   | D   | 81        |
+| 6   | B   | 81        |
+| 7   | A   | 74        |
+| 8   | F#  | 73        |
+| 9   | E   | 62        |
+| 10  | A#  | 57        |
+
+
+#### Count of charted songs by mode (major/minor)
+| Row | mode  | mode_count |
+|-----|-------|------------|
+| 1   | Minor | 403        |
+| 2   | Major | 549        |
+
 
 ## Visualizations
 
