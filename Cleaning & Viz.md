@@ -216,10 +216,10 @@ SELECT mode, COUNT(mode) AS mode_count
 FROM `music.spotifydata`
 GROUP BY mode;
 ```
-| Row | mode  | mode_count |
-|-----|-------|------------|
-| 1   | Minor | 403        |
-| 2   | Major | 549        |
+| mode  | mode_count |
+|-------|------------|
+| Minor | 403        |
+| Major | 549        |
 
 #### Average BPM and Standard Deviation Rounded to Two Decimals 
 ```SQL
