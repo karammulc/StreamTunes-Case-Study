@@ -42,7 +42,7 @@ Objectives:
 
 ### Distribution of Streams by Mode
 ![Distribution of Streams by Mode](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/Distribution%20of%20Streams%20by%20Mode.png)
-#### - The bars in the histogram show the frequency (count) of songs that fall within specific ranges of stream counts, separated by their mode (Major or Minor).
+ - The bars in the histogram show the frequency (count) of songs that fall within specific ranges of stream counts, separated by their mode (Major or Minor).
 
 ### BPM Distribution
 ![BPM Distribution](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/BPM%20Distribution.png) 
