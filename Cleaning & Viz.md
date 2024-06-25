@@ -312,9 +312,3 @@ ggplot(top_artists, aes(x = reorder(artistname, n), y = n)) +
   theme_minimal()
 ```
 
-#### Correlation Matrix
-```{r}
-correlation_matrix <- cor(spotifydata)
-print(correlation_matrix)
-```
-
