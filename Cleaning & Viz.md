@@ -192,7 +192,10 @@ LIMIT 10;
 | 9   | E   | 62        |
 | 10  | A#  | 57        |
 
-```Count of charted songs by mode (Major,Minor)
+
+#### Count of charted songs by mode (Major,Minor)
+
+```SQL
 SELECT mode, COUNT(mode) AS mode_count
 FROM `music.spotifydata`
 GROUP BY mode;
@@ -201,6 +204,19 @@ GROUP BY mode;
 |-----|-------|------------|
 | 1   | Minor | 403        |
 | 2   | Major | 549        |
+
+#### Average BPM and Standard Deviation Rounded to Two Decimals 
+```SQL
+SELECT 
+  ROUND(AVG(BPM),2) AS avg_bpm, 
+  ROUND(stddev(bpm),2) AS standard_deviation
+FROM `bamboo-life-418613.music.spotifydata`;
+
+```
+|avg_bpm|standard_deviation |
+|-------|------------------ |
+| 122.55| 28.07             | 
+
 
 ## R Vizualizations
 
