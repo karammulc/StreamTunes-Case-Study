@@ -33,19 +33,19 @@ Objectives:
 
 # Key Findings
 
-#### Top Artists by Number of Songs Charted
+### Top Artists by Number of Songs Charted
 - Taylor Swift and The Weeknd have the highest amount of songs charted within our dataset. 
 
-#### Distribution of Charted Songs by Release Year
+### Distribution of Charted Songs by Release Year
 - There is a significant skew of charted songs towards release in recent years, suggesting while some “oldies” gain attention, the majority of content listened to was released after 2010.  
 
-#### Distribution of Songs by Key
+### Distribution of Songs by Key
 - Songs in the key of C# are most common within the dataset followed by G, G# and F.
   
-#### Distribution of Streams by Mode: 
+### Distribution of Streams by Mode: 
 - There is a higher count of charting songs in major key (549 occurrences) than in minor key (403 occurrences). 
 
-#### Average BPM & standard deviation 
+### Average BPM & standard deviation 
 - The average BPM for charted songs within this dataset is 122.55, a moderate to upbeat range while the standard deviation for BPM is 28.07. This shows a relatively large degree of variation between listening patterns; as to be expected. 
 
 - The BPM distribution shows a concentration around 100-130 BPM
