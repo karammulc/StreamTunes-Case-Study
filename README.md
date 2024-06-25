@@ -96,18 +96,18 @@ Objectives:
 
 #### Overall Key Count
 
-| Row | key | key_count |
-|-----|-----|-----------|
-| 1   | C#  | 120       |
-| 2   | G   | 96        |
-| 3   | G#  | 91        |
-| 4   | F   | 89        |
-| 5   | D   | 81        |
-| 6   | B   | 81        |
-| 7   | A   | 74        |
-| 8   | F#  | 73        |
-| 9   | E   | 62        |
-| 10  | A#  | 57        |
+| key | key_count |
+|-----|-----------|
+| C#  | 120       |
+| G   | 96        |
+| G#  | 91        |
+| F   | 89        |
+| D   | 81        |
+| B   | 81        |
+| A   | 74        |
+| F#  | 73        |
+| E   | 62        |
+| A#  | 57        |
 
 
 #### Count of charted songs by mode (major/minor)
