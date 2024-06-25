@@ -1,4 +1,4 @@
-####  Top 5 Artists with Highest Total Streams
+##  Top 5 Artists with Highest Total Streams
 
 |     | artistname  | total_streams |
 |-----|--------------|----------------|
@@ -10,7 +10,7 @@
 
 
 
-#### Average Danceability and Energy by Key - Highest Dancibility to Lowest
+## Average Danceability and Energy by Key - Highest Dancibility to Lowest
 
 | Key      | Avg Danceability   | Avg Energy         |
 |----------|---------------------|--------------------|
@@ -29,7 +29,7 @@
 
 
 
-#### Most Listened to Songs 
+## Most Listened to Songs 
 
 | Artist Name              | Track Name                                      | Streams       |
 |--------------------------|-------------------------------------------------|---------------|
@@ -45,7 +45,7 @@
 | The Weeknd, Daft Punk    | Starboy                                         | 2565529693    |
 
 
-#### Most common 10 Keys in top 100 songs
+## Most common 10 Keys in top 100 songs
 
 | Row | key | key_count |
 |-----|-----|-----------|
@@ -60,14 +60,14 @@
 | 9   | E   | 62        |
 | 10  | A#  | 57        |
 
-#### Count of charted songs by mode (Major,Minor)
+## Count of charted songs by mode (Major,Minor)
 
 | Mode  | Song Count |
 |-------|------------|
 | Minor | 403        |
 | Major | 549        |
 
-#### Average BPM and Standard Deviation Rounded to Two Decimals 
+## Average BPM and Standard Deviation Rounded to Two Decimals 
 
 |Average BPM|Standard Deviation |
 |-----------|------------------ |
