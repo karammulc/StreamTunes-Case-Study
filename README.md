@@ -80,19 +80,7 @@ Objectives:
 | (G)I-DLE                        | Queencard                                 | 96273746   |
 | The Weeknd, Future              | Double Fantasy (with Future)              | 96180277   |
 
-#### Most Common Key in Top 100 songs
-| Key                                 | Key Count                             | 
-|---------------------------------|-------------------------------------------|
-| C#                              | 19                                        | 
-| A                               | 11                                        | 
-| F#                              | 11                                        | 
-| E                               | 9                                         | 
-| G                               | 8                                         | 
-| F                               | 7                                         |
-| G#                              | 7                                         | 
-| B                               | 5                                         |
-| A                               | 5                                         | 
-| Unknown                         | 5                                         | 
+
 
 #### Overall Key Count
 
