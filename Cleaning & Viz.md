@@ -107,13 +107,13 @@ SELECT
   SUM(CASE WHEN speechiness IS NULL THEN 1 ELSE 0 END) AS speechiness_nulls
 FROM music.spotifydata;
 ```
-#### Columns with nulls 
+#### Found Column Null Count
 | trackname_nulls | inshazamcharts nulls | key nulls  | 
 |-----------------|------------------|-------------------------|
 | 2               | 50               | 95                      |
 
 
-#### Updating String Columns with Nulls 
+#### Updating String Columns with Nulls (replacing null values with 'Unknown' string)
 ```sql
 UPDATE music.spotifydata
 SET trackname = 'Unknown'
@@ -148,13 +148,29 @@ LIMIT 5;
 | 4   | Harry Styles| 11608645649   |
 | 5   | Bad Bunny   | 9997799607    |
 
-#### Average Danceability and Energy by Key
+#### Average Danceability and Energy by Key - Highest Dancibility to Lowest
 ```sql
-
 SELECT key, AVG(danceability) AS avg_danceability, AVG(energy) AS avg_energy
 FROM music.spotifydata
-GROUP BY key;
+GROUP BY key
+ORDER BY avg_energy DESC;
 ```
+
+| Key      | Avg Danceability   | Avg Energy         |
+|----------|---------------------|--------------------|
+| B        | 69.49382716049378   | 68.0               |
+| F#       | 68.23287671232878   | 66.72602739726027  |
+| C#       | 68.64166666666665   | 66.55000000000003  |
+| F        | 67.1011235955056    | 64.38202247191009  |
+| G#       | 66.37362637362635   | 64.0659340659341   |
+| G        | 67.44791666666667   | 63.71875000000004  |
+| Unknown  | 64.37894736842107   | 63.68421052631577  |
+| D        | 67.80246913580241   | 63.53086419753087  |
+| D#       | 64.54545454545456   | 62.848484848484844 |
+| A#       | 68.78947368421054   | 62.78947368421052  |
+| E        | 65.03225806451613   | 62.11290322580647  |
+| A        | 64.10810810810814   | 60.09459459459458  |
+
 
 #### Most Listened to Songs 
 ```sql
