@@ -9,7 +9,7 @@ including track attributes, popularity, and presence on various music platforms.
 Objectives:
 - Identify key factors that contribute to a song's popularity and success across different music platforms.
 - Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
-- Explore opportunities for cross-platform partnerships and promotions to expand StreamTunes' user base and market share.
+
 
 ## Table of Contents
 - [Introduction](#introduction)
