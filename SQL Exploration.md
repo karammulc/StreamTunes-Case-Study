@@ -59,3 +59,15 @@ SELECT
 FROM `bamboo-life-418613.music.spotifydata`;
 
 ```
+I realized that I should also have specified the key and mode together to get a more specific analysis of popularity trends.
+This was done a bit late in the process. 
+
+```SQL
+ALTER TABLE your_dataset.your_table
+ADD COLUMN key_mode STRING;
+
+
+UPDATE `music.spotifydata`
+SET key_mode = CONCAT(key, ' ', mode)
+WHERE TRUE;
+```
