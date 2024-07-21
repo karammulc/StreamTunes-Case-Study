@@ -4,11 +4,12 @@
 Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data-driven insights. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify,
 including track attributes, popularity, and presence on various music platforms.
 
-#### Tools Used: Google Sheets, BigQuery, R Posit Cloud
+#### Tools Used: Google Sheets, BigQuery, R Posit Cloud, Adobe Express, Tableau 
 
 Objectives:
 - Identify key factors that contribute to a song's popularity and success across different music platforms.
 - Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
+
 
 
 ## Table of Contents
@@ -31,6 +32,10 @@ Objectives:
   I located and removed this corrupted record using SQL.
   ###### Big thanks to the Kaggle community for their contributions!  
 
+# Dashboard
+[StreamTunes Dashboard](https://public.tableau.com/authoring/Test_17204636004920/Dashboard12/StreamTunes%20Dashboard#1)
+
+
 # Key Findings
 
 #### Top Artists by Number of Songs Charted: 
@@ -48,6 +53,8 @@ Objectives:
 #### Average BPM & standard deviation: 
   - The average BPM for charted songs within this dataset is 122.55, a moderate to upbeat range while the standard deviation for BPM is 28.07. This shows a relatively large degree of variation between listening patterns; as to be expected.
   - The BPM distribution shows a concentration around 100-130 BPM
+
+# Dashboard 
 
 # Recommendations
 
