@@ -35,6 +35,7 @@ Objectives:
 # Dashboard
 [StreamTunes Dashboard](https://public.tableau.com/authoring/Test_17204636004920/Dashboard12/StreamTunes%20Dashboard#1)
 
+![Dashboard](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Images/StreamTunesDashboard.png)
 
 # Key Findings
 
