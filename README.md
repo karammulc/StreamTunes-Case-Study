@@ -55,7 +55,7 @@ Objectives:
   - The average BPM for charted songs within this dataset is 122.55, a moderate to upbeat range while the standard deviation for BPM is 28.07. This shows a relatively large degree of variation between listening patterns; as to be expected.
   - The BPM distribution shows a concentration around 100-130 BPM
 
-# Dashboard 
+
 
 # Recommendations
 
