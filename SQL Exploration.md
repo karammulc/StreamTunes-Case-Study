@@ -63,7 +63,7 @@ I realized that I should also have specified the key and mode together to get a 
 This was done a bit late in the process. 
 
 ```SQL
-ALTER TABLE your_dataset.your_table
+ALTER TABLE 'music.spotifydata'
 ADD COLUMN key_mode STRING;
 
 
