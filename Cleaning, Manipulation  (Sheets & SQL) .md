@@ -18,7 +18,7 @@
 | artistcount     | artist_count        |
 | releasedyear    | released_year       |
 | releasedmonth   | released_month      |
-| releasedday     | Released_day        |
+| releasedday     | released_day        |
 | inspotifyplaylists | in_spotify_playlists |
 | inspotifycharts | in_spotify_charts   |
 | streams         | streams             |
@@ -122,6 +122,7 @@ HAVING COUNT(*) > 1;
 #### No duplicates found
 
 #### Updating String Columns with Nulls (replacing null values with 'Unknown' string)
+#### inshazamchart nulls were not updated due to the next step.
 ```sql
 UPDATE music.spotifydata
 SET trackname = 'Unknown'
@@ -170,7 +171,7 @@ LIMIT 10;
 ```
 
 
-#### Finding most common Keys in top 100 songs
+#### Finding the most common Keys in the top 100 songs
 
 -  To achieve this, I selected the top 100 songs ordered by streams, grouped by key, and counted the occurrence of each key. Lastly, I ordered the count in descending order.
 ```SQL
