@@ -112,6 +112,14 @@ FROM music.spotifydata;
 |-----------------|------------------|-------------------------|
 | 2               | 50               | 95                      |
 
+#### Looking for duplicates
+```sql
+SELECT trackname, artistname, COUNT(*)
+FROM music.spotifydata
+GROUP BY trackname, artistname
+HAVING COUNT(*) > 1;
+```
+#### No duplicates found
 
 #### Updating String Columns with Nulls (replacing null values with 'Unknown' string)
 ```sql
@@ -129,6 +137,8 @@ WHERE key IS NULL;
 ALTER TABLE music.spotifydata
 DROP COLUMN inshazamcharts;
 ```
+
+#### After each manipulation step, I verified all accurate changes.
 
 ##  SQL Analysis
 
