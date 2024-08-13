@@ -22,7 +22,7 @@ Objectives:
 - [Visualizations](#visualizations)
 
 ## Documentation
-[Cleaning, Manipulation & Visualization Markdown](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Cleaning%20%26%20Viz.md)
+[Cleaning, Manipulation & Visualization Markdown](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Cleaning%2C%20Manipulation%20%20(Sheets%20%26%20SQL)%20.md)
 
 ## Challenges
 #### Challenges for this project were relatively limited. 
