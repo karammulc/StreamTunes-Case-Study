@@ -112,14 +112,7 @@ FROM music.spotifydata;
 |-----------------|------------------|-------------------------|
 | 2               | 50               | 95                      |
 
-#### Looking for duplicates
-```sql
-SELECT trackname, artistname, COUNT(*)
-FROM music.spotifydata
-GROUP BY trackname, artistname
-HAVING COUNT(*) > 1;
-```
-#### No duplicates found
+
 
 #### Updating String Columns with Nulls (replacing null values with 'Unknown' string)
 #### inshazamchart nulls were not updated due to the next step.
@@ -133,11 +126,40 @@ SET key = 'Unknown'
 WHERE key IS NULL;
 ```
 #### I will not be using the inshazamcharts variable for analysis, so I am dropping this column altogether.
+We're focusing on nulls in trackname and key as they're critical for our analysis. The inshazamcharts column has been dropped due to its high null count and limited relevance to our target audience.
 
 ```sql
 ALTER TABLE music.spotifydata
 DROP COLUMN inshazamcharts;
 ```
+#### Looking for duplicates
+```sql
+SELECT trackname, artistname, COUNT(*)
+FROM music.spotifydata
+GROUP BY trackname, artistname
+HAVING COUNT(*) > 1;
+```
+#### | Row | trackname | artistname | DuplicateCount |
+|-----|-----------|------------|----------------|
+| 1   | SNAP      | Rosa Linn  | 2              |
+| 2   | About Damn Time | Lizzo | 2              |
+| 3   | Take My Breath | The Weeknd | 2              |
+| 4   | SPIT IN MY FACE! | ThxSoMch | 2              |
+
+#### Investigating these records 
+```sql
+  SELECT * 
+FROM music.spotifydata 
+WHERE trackname IN 
+('SNAP', 'About Damn Time', 'Take My Breath', 'SPIT IN MY FACE!');
+```
+#### Findings:
+- "About Damn Time" and "SPIT IN MY FACE!" have different playlist counts and streams.
+- "Take My Breath" has different keys, modes, and significant differences in streams and playlist counts.
+
+For this particular case, and lack of particular context I am keeping all records for all of these duplicates.
+In the music industry it is not uncommon to have multiple forms of release; and I do not wish to reduce stream counts by assuming error.
+
 
 #### After each manipulation step, I verified all accurate changes.
 
