@@ -1,10 +1,16 @@
 ## Introduction
 
-# StreamTunes-Case-Study
-Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data-driven insights. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify,
-including track attributes, popularity, and presence on various music platforms.
+## StreamTunes-Case-Study
+Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data analysis. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify, including track attributes, popularity, and presence on various music platforms.
 
-#### Tools Used: Google Sheets, BigQuery, R Posit Cloud, Adobe Express, Tableau 
+### Tools Used
+- Google Sheets
+- BigQuery
+- R Posit Cloud
+- Adobe Express
+- Tableau
+
+
 
 Objectives:
 - Identify key factors that contribute to a song's popularity and success across different music platforms.
