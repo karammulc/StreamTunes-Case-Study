@@ -59,7 +59,7 @@ Objectives:
 
 #### Average BPM & standard deviation: 
   - The average BPM for charted songs within this dataset is 122.55, a moderate to upbeat range while the standard deviation for BPM is 28.07. This shows a relatively large degree of variation between listening patterns; as to be expected.
-  - The BPM distribution shows a concentration around 100-130 BPM
+  - The BPM distribution shows a concentration around 100-130 BPM. 
 
 
 
@@ -72,7 +72,7 @@ Objectives:
 - By promoting new releases and staying updated with emerging trends, StreamTunes can identify rising stars and guide the process of updating spotlights and playlists within the platform's applications.
 
 #### Leveraging Top Artists
-- By leveraging promotions with artists such as Taylor Swift, The Weeknd, and other top artists, StreamTunes can gain the attention of major fan bases. Suggested actions could include listening and release parties, artist-relevant merch with the StreamTunes logo, and more.
+- By leveraging promotions with artists such as Taylor Swift, The Weeknd, and other top artists, StreamTunes can gain the attention of major fan bases. Suggested actions could include listening and release parties, artist relevant merch with the StreamTunes logo, and more.
 
 #### Continued Analysis 
 - Further analysis could focus on budget-conscious strategies, balancing marketing expenditures with the expected return on investment based on song popularity and anticipated costs.
