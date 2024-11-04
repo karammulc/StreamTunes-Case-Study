@@ -42,6 +42,9 @@ Update: After exploring the dashboard, I noticed that there were incorrect 'rele
 
 Immediately, I noticed that songs listed as remastered, though they included their release within the title themselves, had the original versions' release date as their value. Sigue by Ed Sheeran and J Balvin also was incorrect. There a corrupted value that had the artist name in the title; this was resolved.
 
+At first, I tried replacing the data source with a corrected CSV, but unfortunately, Tableau Public's free version does not allow you to replace a data source easily.
+Alternatively, I created a calculated field to resolve these errors. 
+
 I will be noting these as a comment on kaggle.
 
 
