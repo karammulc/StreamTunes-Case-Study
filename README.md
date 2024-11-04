@@ -40,7 +40,7 @@ Objectives:
 
 Update: After exploring the dashboard, I noticed that there were incorrect 'releasedate' column values for Vance Joy. To try to reduce any other errors within the spreadsheet I filtered to show songs with a 'releasedate' before 2,000 as I can easily flag. 
 
-Immediately, I noticed that songs listed as remastered, though they included their release within the title themselves, had the original versions' release date as their value. Sigue by Ed Sheeran and J Balvin also was incorrect. There was also a corrupted value that had the artist name in the title; this was resolved.
+Immediately, I noticed that songs listed as remastered, though they included their release within the title themselves, had the original versions' release date as their value. Sigue by Ed Sheeran and J Balvin also was incorrect. There a corrupted value that had the artist name in the title; this was resolved.
 
 I will be noting these as a comment on kaggle.
 
