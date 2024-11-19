@@ -45,18 +45,17 @@ Immediately, I noticed that songs listed as remastered, though they included the
 At first, I tried replacing the data source with a corrected CSV, but unfortunately, Tableau Public's free version does not allow you to replace a data source easily.
 Alternatively, I created a calculated field to resolve these errors. 
 
-I will be noting these as a comment on kaggle.
 
 Incorrect values 
 
-trackname                                         artistname         releasedate          accurate releasedate                        
-
-Cupid  Twin Ver. (FIFTY FIFTY)  Spe    |          sped up 8282     |   1997   |       This whole entry is incorrect - the track name and artist name are corrupte
-Riptide                                |          Vance Joy        |   1975   |  2013
-Sigue	                                 |      Ed Sheeran J Balvin	 |	 1996   |  2022
-Smells Like Teen Spirit - Remastered 2021  |    	Nirvana	             |   1991 | 2021
-Something In The Way - Remastered 2021 |     	    Nirvana	             |	1991  | 2021      
-Master of Puppets (Remastered)	        |          Metallica           |	1986   |      2022
+| Track Name | Artist Name | Release Date | Accurate Release Date | Notes |
+|------------|-------------|--------------|---------------------|--------|
+| Cupid Twin Ver. (FIFTY FIFTY) Spe | sped up 8282 | 1997 | N/A | Corrupted entry - track name and artist name incorrect |
+| Riptide | Vance Joy | 1975 | 2013 | |
+| Sigue | Ed Sheeran J Balvin | 1996 | 2022 | |
+| Smells Like Teen Spirit - Remastered 2021 | Nirvana | 1991 | 2021 | |
+| Something In The Way - Remastered 2021 | Nirvana | 1991 | 2021 | |
+| Master of Puppets (Remastered) | Metallica | 1986 | 2022 | |
 
 
 
