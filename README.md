@@ -53,9 +53,9 @@ Incorrect values
 | Cupid Twin Ver. (FIFTY FIFTY) Spe | sped up 8282 | 1997 | N/A | Corrupted entry - track name and artist name incorrect |
 | Riptide | Vance Joy | 1975 | 2013 | |
 | Sigue | Ed Sheeran J Balvin | 1996 | 2022 | |
-| Smells Like Teen Spirit - Remastered 2021 | Nirvana | 1991 | 2021 | |
-| Something In The Way - Remastered 2021 | Nirvana | 1991 | 2021 | |
-| Master of Puppets (Remastered) | Metallica | 1986 | 2022 | |
+| Smells Like Teen Spirit - Remastered 2021 | Nirvana | 1991 | 2021 | Incorrectly used the original release |
+| Something In The Way - Remastered 2021 | Nirvana | 1991 | 2021 | Incorrectly used the original release |
+| Master of Puppets (Remastered) | Metallica | 1986 | 2022 | Incorrectly used the original release |
 
 
 
