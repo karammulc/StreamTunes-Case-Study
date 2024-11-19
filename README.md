@@ -57,7 +57,7 @@ Incorrect values
 | Something In The Way - Remastered 2021 | Nirvana | 1991 | 2021 | Incorrectly used the original release |
 | Master of Puppets (Remastered) | Metallica | 1986 | 2022 | Incorrectly used the original release |
 
-To remedy these inconsistencies, a filter was added to all visualizations using this data source. This was done by using the follow calculated field and selecting values labeled 'include'.
+To exclude incorrect values from the visualizations, I created the following calculated field in Tableau, which flags songs for inclusion or exclusion:
 
 ```sql
 IF [Trackname] IN ('Cupid Twin Ver. (FIFTY FIFTY)', 
