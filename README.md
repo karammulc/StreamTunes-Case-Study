@@ -1,4 +1,5 @@
 ## StreamTunes-Case-Study
+<img src="https://github.com/karammulc/Hulu-Analysis/blob/main/Hulu-Logo.jpg" alt="StreamTunes Logo" width="400"/>
 
 ## Project Overview 🔍
 Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data analysis. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify, including track attributes, popularity, and presence on various music platforms.
@@ -7,7 +8,7 @@ Background: A major music streaming platform, StreamTunes, aims to enhance its u
 - Google Sheets
 - BigQuery
 - R Posit Cloud
-- Adobe Express
+- Adobe Express (Fictional logo)
 - Tableau
 
 
