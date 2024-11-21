@@ -17,17 +17,7 @@ Objectives:
 - Develop strategies to optimize StreamTunes' playlist curation and song recommendations based on user preferences and trends.
 
 
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Documentation](#documentation)
-- [Challenges](#challenges)
-- [Key Findings](#key-findings)
-- [Recommendations](#recommendations)
-- [Tables](#tables)
-- [Visualizations](#visualizations)
-
-## Documentation
+### Documentation
 [Cleaning, Manipulation & Visualization Markdown](https://github.com/karammulc/StreamTunes-Case-Study/blob/main/Cleaning%2C%20Manipulation%20%20(Sheets%20%26%20SQL)%20.md)
 
 ## Challenges
