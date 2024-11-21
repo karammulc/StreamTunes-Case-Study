@@ -1,6 +1,6 @@
-## Introduction
-
 ## StreamTunes-Case-Study
+
+## Project Overview 🔍
 Background: A major music streaming platform, StreamTunes, aims to enhance its user experience and increase user engagement by leveraging data analysis. The company has acquired a comprehensive dataset containing information about the most famous songs of 2023 on Spotify, including track attributes, popularity, and presence on various music platforms.
 
 ### Tools Used
